@@ -17,7 +17,7 @@ public class Mario {
     }
     
     public void resetHeight() {
-        System.out.print("Enter pyramid height (2 - 23) ");
+        System.out.print("Enter pyramid height (2 - 23): ");
         do {
             height = Integer.parseInt(System.console().readLine());
         } while ((height < 1) || (height > 23));
@@ -33,6 +33,12 @@ public class Mario {
             pyramid.append("#\n");
         }
     }
+    
+    /** 
+     *  printPyramid & writePyramid:
+     *	  - these methods do not fail in the case
+     *      of an empty pyramid.
+     */
     
     public void printPyramid() {
         System.out.print(pyramid.toString());
@@ -63,8 +69,11 @@ public class Mario {
     }
 
     /**
-     * @param args: output file
+     * @param args: output-file
+     *
+     * Without output-file argument, prints to console
      */
+     
     public static void main(String[] args) {
         Mario myPyramid = new Mario();
         myPyramid.resetHeight();
