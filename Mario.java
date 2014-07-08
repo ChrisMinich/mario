@@ -7,6 +7,9 @@
 package mario;
 
 import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Mario {
     private int height;
@@ -16,10 +19,16 @@ public class Mario {
         height = 0;
     }
     
-    public void resetHeight() {
+    public void resetHeight() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter pyramid height (2 - 23): ");
         do {
-            height = Integer.parseInt(System.console().readLine());
+            try{
+                height = Integer.parseInt(br.readLine());
+            }
+            catch (NumberFormatException nfe) {
+                System.err.println("Invalid Format!");
+            }
         } while ((height < 1) || (height > 23));
     }
     
@@ -74,7 +83,7 @@ public class Mario {
      * Without output-file argument, prints to console
      */
      
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Mario myPyramid = new Mario();
         myPyramid.resetHeight();
         myPyramid.buildPyramid();
@@ -85,4 +94,3 @@ public class Mario {
     }
     
 }
-
