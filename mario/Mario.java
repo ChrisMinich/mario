@@ -80,7 +80,7 @@ public class Mario {
     /**
      * @param args: output-file
      *
-     * Without output-file argument, prints to console
+     * Without output-file argument, prints to console.
      */
      
     public static void main(String[] args) throws IOException {
