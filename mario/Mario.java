@@ -62,7 +62,7 @@ public class Mario {
     		}
     	}
     	catch (IOException exc) {
-    		System.out.println("I/O Error: " + exc);
+    		System.out.println(String.format("I/O Error: %s", exc));
     	}
     	finally {
     		try {
