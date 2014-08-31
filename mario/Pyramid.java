@@ -7,7 +7,7 @@
 package mario;
 import java.io.*;
 
-class Pyramid extends ShapeAsString {
+class Pyramid extends Shape {
     private String pyramid;
 
     public Pyramid() throws IOException {
