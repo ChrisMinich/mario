@@ -4,7 +4,7 @@
  *         cfminich@gmail.com
  */
 
-package mario;
+package com.chris.mario;
 import java.io.*;
 
 public class Mario {
@@ -17,17 +17,14 @@ public class Mario {
 
     public static void main(String[] args) throws IOException {
         Pyramid pyr = new Pyramid();
+        Printer printer;
         if (args.length > 0) {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(args[0])))
-            {
-                bw.write(pyr.toString());
-            } catch (IOException exc) {
-                System.out.println(String.format("I/O Error: %s", exc));
-            }
+            printer = PrinterFactory.getInstance().getFilePrinter(args[0]);
         }
         else {
-            System.out.print(pyr.toString());
+            printer = PrinterFactory.getInstance().getConsolePrinter();
         }
+        printer.print(pyr.toString());
 
     }
 

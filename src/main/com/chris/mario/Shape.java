@@ -4,7 +4,7 @@
  *         cfminich@gmail.com
  */
 
-package mario;
+package com.chris.mario;
 import java.io.*;
 
 abstract class Shape {
