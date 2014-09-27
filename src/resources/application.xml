@@ -5,7 +5,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
+    <bean id="mario" class="com.chris.mario.Mario">
+        <property name="consolePrinter" ref="consolePrinter"/>
+        <property name="filePrinter" ref="filePrinter"/>
+    </bean>
 
+    <bean id="consolePrinter" class="com.chris.mario.ConsolePrinter"/>
+
+    <bean id="filePrinter" class="com.chris.mario.FilePrinter" />
 
 
 </beans>
