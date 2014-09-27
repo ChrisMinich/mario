@@ -5,19 +5,8 @@ package com.chris.mario;
  */
 public class PrinterFactory {
 
-    private PrinterFactory() {}
-
-    private static PrinterFactory instance;
-
-    public static PrinterFactory getInstance() {
-        if (instance == null) {
-            instance = new PrinterFactory();
-        }
-        return instance;
-    }
-
     public Printer getConsolePrinter() {
-        return ConsolePrinter.getInstance();
+        return new ConsolePrinter();
     }
 
     public Printer getFilePrinter(String fileName) {

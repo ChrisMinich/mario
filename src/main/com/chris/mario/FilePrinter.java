@@ -8,6 +8,11 @@ import java.io.IOException;
  * Created by chris on 9/26/14.
  */
 public class FilePrinter implements Printer {
+
+    public FilePrinter() {
+        this.fileName = "mario.txt";
+    }
+
     public String fileName;
     public FilePrinter(String fileName) {
         this.fileName = fileName;
